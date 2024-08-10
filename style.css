@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background: #AFC794;
+    min-height: 100vh;
+}
+
+.todo-header h1{
+    text-align: center;
+    padding: 2rem 0.8rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.6rem;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 5rem;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.btn{
+    background: #AFC794;
+    padding: 0.6rem;
+    border-radius: 0.4rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%; /* Ensure button takes full width of the container */
+    margin-bottom: 1rem; /* Adds space between the button and the first list item */
+}
+.btn:active{
+    transform: scale(0.96);
+}
+.btn:hover{
+    background: #dbd2b0;
+}
+#taskInput{
+    padding: 0.6rem 1rem;
+    border-radius: 0.2rem;
+    border: none;
+    outline: solid #AFC794;
+    background: transparent;
+    margin-bottom: 1rem; /* Adds space between the input box and the button */
+    width: 100%;
+    
+}
+
+#list-items {
+    list-style-type: none; /* Removes the bullet points */
+    padding-left: 0; /* Removes the default padding */
+    margin-top: 1rem;
+}
+
+#list-items li {
+    margin-bottom: 0.5rem; /* Optional: Adds space between list items */
+    display: flex;
+    align-items: center; /* Ensures items are aligned with checkboxes */
+    justify-content: space-between;
+    padding: 0.6rem;
+    border-radius: 0.2rem;
+    background-color: #fff; /* Optional: Adds a background color to list items */
+    width: 100%; /* Ensures list items take full width of the container */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow */
+}
+#list-items li:hover {
+    background-color: #e0ead5;
+}
+
+#list-items li input[type="checkbox"] {
+    margin-right: 1rem; /* Adds space between checkbox and text */
+    -webkit-appearance: none; /* Remove default styling for Webkit browsers */
+    -moz-appearance: none; /* Remove default styling for Firefox */
+    appearance: none; /* Remove default styling for other browsers */
+    width: 20px; /* Width of custom checkbox */
+    height: 20px; /* Height of custom checkbox */
+    border: 2px solid #AFC794; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    background-color: transparent; /* Background color when unchecked */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    position: relative;
+}
+
+#list-items li input[type="checkbox"]:checked::before {
+    content: ''; 
+    color: white; 
+    font-size: 16px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+#list-items li input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #AFC794; 
+}
+
+.checked {
+    text-decoration: line-through; /* Strikethrough the text */
+    color: #888; /* Optional: Change text color to a lighter shade */
+}
+
+.delete-btn {
+    background-color: #dbd2b0;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0; /* Prevents the button from shrinking */
+}
+.delete-btn:hover {
+    background-color: #afc794;
+}
